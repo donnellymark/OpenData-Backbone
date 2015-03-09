@@ -106,7 +106,7 @@ gulp.task('extras', function () {
 gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));
 
 gulp.task('serve', ['connect', 'watch'], function () {
-  require('opn')('http://localhost:9000');
+  require('opn')('http://localhost:9050');
 });
 
 gulp.task('connect', ['styles', 'jst'], function () {
@@ -121,7 +121,7 @@ gulp.task('connect', ['styles', 'jst'], function () {
     .use(serveIndex('app'));
 
   require('http').createServer(app)
-    .listen(9000)
+    .listen(9050)
     .on('listening', function () {
       console.log('Started connect web server on http://localhost:9000');
     });
